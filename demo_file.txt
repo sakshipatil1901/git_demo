@@ -1,0 +1,17 @@
+#python for loop
+
+names = ["Sakshi", "Purva", "Tejas"]
+
+for i in names:
+    print(i)
+    if i=='Sakshi':
+        print("Hey It's me")
+
+numbers = [6,8,-3,2,15]
+
+squares = []
+
+for i in numbers:
+    square = i ** 2
+    squares.append(square)
+print("The list of squares:" ,squares)
