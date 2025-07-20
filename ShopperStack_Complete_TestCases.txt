@@ -1,0 +1,111 @@
+Step No	Action/Description	Input	Expected Results	Actual Results	Status	Comments
+1	Open the browser and enter the test URL	Valid URL	ShopperStack registration/login page should be displayed			
+2	Navigate to Registration page	Click on Register/Sign Up	Registration page should be displayed with all required fields			
+3	Verify Registration page components	NA	Registration page should display: i) First Name text field ii) Gender Radio Button iii) Phone number Text field iv) Country Drop down v) Password text field vi) Submit/Register Button			
+4	Following are the steps to test First Name Text field				
+5	Enter valid first name and submit	John	Error message should not be displayed, field should accept input			
+6	Enter first name with minimum valid length	Jo	First name should be accepted (assuming 2 char minimum)			
+7	Enter first name with single character	A	Error message should be displayed for minimum length requirement			
+8	Enter first name with maximum allowed length	JohnJacobJingleheimerSchmidt	First name should be accepted if within limit, or truncated			
+9	Enter first name exceeding maximum length	JohnJacobJingleheimerSchmidtWithVeryLongNameThatExceedsLimit	Error message should be displayed for maximum length exceeded			
+10	Enter numbers in first name field	John123	Error message should be displayed - only alphabets allowed			
+11	Enter special characters in first name field	John@#$	Error message should be displayed - only alphabets allowed			
+12	Enter only spaces in first name field	   	Error message should be displayed - blank spaces not allowed			
+13	Leave first name field empty and submit		Error message should be displayed - field is mandatory			
+14	Enter first name with leading/trailing spaces	 John 	System should trim spaces and accept John			
+15	Enter first name with mixed case	jOhN	System should accept mixed case or convert to proper case			
+16	Enter first name with numbers at end	John123	Error message should be displayed - only alphabets allowed			
+17	Enter first name with special characters at beginning	@John	Error message should be displayed - only alphabets allowed			
+18	Enter first name with hyphen	Mary-Jane	System should accept hyphen in name or show appropriate error			
+19	Enter first name with apostrophe	O'Connor	System should accept apostrophe in name or show appropriate error			
+20	Following are the steps to test Gender Radio Button				
+21	Verify gender options are displayed	NA	Male and Female radio buttons should be visible			
+22	Select Male gender option	Click Male radio button	Male option should be selected, Female should be unselected			
+23	Select Female gender option	Click Female radio button	Female option should be selected, Male should be unselected			
+24	Switch between gender options	Click Male then Female	Only one option should be selected at a time			
+25	Submit form without selecting gender	No selection	Error message should be displayed - gender selection is mandatory			
+26	Verify only one gender can be selected	Attempt to select both	Only the last clicked option should remain selected			
+27	Verify gender selection is retained	Select Male, navigate away and back	Previously selected gender should remain selected			
+28	Test keyboard navigation for gender selection	Use Tab and Space keys	Should be able to navigate and select using keyboard			
+29	Verify gender radio button labels	NA	Labels should be clearly visible and clickable			
+30	Test default gender selection	NA	Verify if any gender is pre-selected by default			
+31	Following are the steps to test Phone Number Text field				
+32	Enter valid 10-digit phone number	9876543210	Phone number should be accepted without error			
+33	Enter phone number with country code	+919876543210	Phone number should be accepted with country code			
+34	Enter phone number with less than 10 digits	987654321	Error message should be displayed - invalid length			
+35	Enter phone number with more than 10 digits	98765432109	Error message should be displayed - exceeds maximum length			
+36	Enter alphabets in phone number field	ABCDEFGHIJ	Error message should be displayed - only numbers allowed			
+37	Enter special characters in phone number	@#$%^&*()+	Error message should be displayed - only numbers allowed			
+38	Enter phone number starting with 0	0987654321	Error message should be displayed - invalid format			
+39	Enter blank spaces in phone number field	   	Error message should be displayed - field cannot be empty			
+40	Leave phone number field empty		Error message should be displayed - field is mandatory			
+41	Enter phone number with spaces/hyphens	987-654-3210	System should either accept formatted number or show format error			
+42	Enter duplicate phone number	9876543210 (if already registered)	Error message should be displayed - phone number already exists			
+43	Enter phone number starting with 1	1987654321	Error message should be displayed - invalid format for Indian numbers			
+44	Enter phone number with only zeros	0000000000	Error message should be displayed - invalid phone number			
+45	Enter phone number with repeated digits	1111111111	Error message should be displayed or accepted based on business rules			
+46	Enter international phone number format	+1-555-123-4567	System should handle international format or show appropriate error			
+47	Test copy-paste functionality in phone field	Copy and paste valid number	Phone number should be accepted			
+48	Following are the steps to test Country Dropdown				
+49	Verify dropdown displays country list	Click dropdown	List of countries should be displayed			
+50	Select a valid country from dropdown	Select India	Selected country should be displayed in dropdown			
+51	Verify default country selection	NA	Default country (if any) should be pre-selected			
+52	Search for country in dropdown	Type Ind	Countries starting with Ind should be filtered and displayed			
+53	Select country and verify selection	Select United States	United States should be displayed as selected			
+54	Submit form without selecting country	No selection	Error message should be displayed - country selection is mandatory			
+55	Verify all countries are listed	Scroll through dropdown	All major countries should be available in the list			
+56	Test dropdown keyboard navigation	Use arrow keys to navigate	Should be able to navigate through options using keyboard			
+57	Verify country selection is retained	Select country, navigate away and back	Previously selected country should remain selected			
+58	Test partial country name search	Type Unit	Countries containing Unit should be filtered			
+59	Test case-insensitive search	Type INDIA	Should find India regardless of case			
+60	Test dropdown with special characters	Type country with accents	Should find countries with special characters			
+61	Test clicking outside dropdown	Click outside after opening	Dropdown should close without selection change			
+62	Test dropdown scrolling	Scroll through long list	Should be able to scroll through all countries			
+63	Test selecting first option	Select first country in list	First country should be selected			
+64	Test selecting last option	Select last country in list	Last country should be selected			
+65	Following are the steps to test Password Text field				
+66	Enter valid strong password	Password@123	Password should be accepted, characters should be masked			
+67	Enter password with minimum required length	Pass@1	Password should be accepted if meets minimum criteria			
+68	Enter password below minimum length	123	Error message should be displayed - password too short			
+69	Enter password without uppercase letter	password@123	Error message should be displayed - uppercase required			
+70	Enter password without lowercase letter	PASSWORD@123	Error message should be displayed - lowercase required			
+71	Enter password without numbers	Password@	Error message should be displayed - number required			
+72	Enter password without special characters	Password123	Error message should be displayed - special character required			
+73	Enter only alphabets in password	Password	Error message should be displayed - missing numbers/special chars			
+74	Enter only numbers in password	123456789	Error message should be displayed - missing alphabets/special chars			
+75	Enter password exceeding maximum length	ThisIsAVeryLongPasswordThatExceedsTheMaximumAllowedLengthForPasswordField123@	Error message should be displayed - password too long			
+76	Enter blank spaces in password field	   	Error message should be displayed - password cannot be empty			
+77	Leave password field empty		Error message should be displayed - password is mandatory			
+78	Verify password masking	Type any password	Characters should be displayed as dots/asterisks for security			
+79	Test show/hide password toggle	Click eye icon (if available)	Password should toggle between masked and visible text			
+80	Enter common weak passwords	123456	Error message should be displayed - password too weak			
+81	Enter common weak passwords	password	Error message should be displayed - password too weak			
+82	Enter common weak passwords	admin	Error message should be displayed - password too weak			
+83	Enter password with only special characters	@#$%^&*()	Error message should be displayed - missing alphabets/numbers			
+84	Enter password with spaces	Pass word@123	Error message should be displayed - spaces not allowed			
+85	Enter password with leading spaces	 Password@123	System should trim spaces or show error			
+86	Enter password with trailing spaces	Password@123 	System should trim spaces or show error			
+87	Test copy-paste in password field	Copy and paste password	Password should be pasted and masked			
+88	Test password strength indicator	Enter various passwords	Password strength should be indicated (weak/medium/strong)			
+89	Enter password with consecutive characters	abcd@123	Error message should be displayed if consecutive chars not allowed			
+90	Enter password with repeated characters	aaaa@123	Error message should be displayed if repeated chars not allowed			
+91	Enter password with dictionary words	Password@123	Error message should be displayed if dictionary words not allowed			
+92	Enter password with user information	john@123 (if username is john)	Error message should be displayed - password contains user info			
+93	Test password confirmation field	Enter different passwords	Error message should be displayed - passwords do not match			
+94	Test password confirmation field	Enter same passwords	Passwords should match without error			
+95	Following are the steps to test Complete Form Submission				
+96	Submit form with all valid inputs	Fill all fields with valid data	Registration should be successful, confirmation message displayed			
+97	Submit form with one invalid field	Valid data except first name	Error message should be displayed for invalid field			
+98	Submit completely empty form	All fields empty	Error messages should be displayed for all mandatory fields			
+99	Test form validation order	Submit with multiple errors	Errors should be displayed in logical order (top to bottom)			
+100	Verify form reset functionality	Fill form and click Reset	All fields should be cleared to default state			
+101	Test form submission with network error	Submit form during network issue	Appropriate error message should be displayed			
+102	Test form auto-save functionality	Fill form partially and refresh	Form data should be retained (if auto-save enabled)			
+103	Test form submission timeout	Submit form with slow network	Timeout error should be handled gracefully			
+104	Test multiple form submissions	Click submit button multiple times	Should prevent multiple submissions			
+105	Test browser back button after submission	Submit form and click back	Should handle navigation appropriately			
+106	Test form validation on field blur	Move focus from invalid field	Error should be displayed immediately			
+107	Test form validation on field focus	Focus on field with error	Error should be cleared when user starts typing			
+108	Test responsive design on mobile	Access form on mobile device	Form should be responsive and usable on mobile			
+109	Test form accessibility	Use screen reader	Form should be accessible with proper labels and descriptions			
+110	Test browser autofill	Use browser autofill feature	Form should work properly with autofilled data
