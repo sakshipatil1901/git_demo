@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="NoBroker Property Search Test Suite">
+    <test name="Property Search Tests">
+        <classes>
+            <class name="test.SearchPropertyTest"/>
+        </classes>
+    </test>
+</suite>
